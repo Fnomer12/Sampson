@@ -4,25 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sampson's Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,300&display=swap" rel="stylesheet">
+
+
   <style>
     * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  color: #161616;
-  overflow-x: hidden;
-  transition: background 0.3s, color 0.3s;
-}
-     /* Intro Typing Effect */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      color: #161616;
+      overflow-x: hidden;
+    }
+
+    /* Intro Typing Effect */
     #intro-screen {
       position: fixed;
       top: 0;
@@ -49,288 +52,297 @@ body {
   animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
 }
 
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #302f2fe1;
-  color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-nav h1 {
-  font-size: 20px;
-  flex: 1;
-}
-
-.nav-center {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex: 2;
-  list-style: none;
-}
-
-.nav-center li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.nav-center li a:hover {
-  color: #ffcc00;
-}
-
-#modeToggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  flex: 1;
-  text-align: right;
-}
-
-/* Hero */
-.hero {
-  height: 100vh;
-  margin-top: 60px;
-  position: relative;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-}
-
-.hero-text h2 {
-  font-size: 36px;
-}
-
-.hero-text p {
-  font-size: 20px;
-  margin-top: 10px;
-}
-
-/* Content */
-.content {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.content h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #302f2f;
-}
-
-.content p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 40px;
-}
-
-/* Languages */
-.language-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.language-tags span {
-  background-color: #fff;
-  padding: 10px 20px;
-  border-radius: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  font-weight: bold;
-  font-size: 16px;
-}
-
-/* Project Gallery */
-.gallery-scroll {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px 0;
-  scroll-behavior: smooth;
-}
-
-.project-card {
-  flex: 0 0 auto;
-  width: 200px;
-  height: 220px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 10px;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-}
-
-.project-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.insert-card {
-  background-color: #e0e0e0;
-  color: #444;
-  font-size: 16px;
-  font-weight: bold;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-/* iPhone-style Dock */
-.dock-container {
-  position: fixed;
-  bottom: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 999;
-}
-
-.dock {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border-radius: 25px;
-  padding: 10px 25px;
-  display: flex;
-  gap: 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.dock a img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.2s ease;
-}
-
-.dock a:hover img {
-  transform: scale(1.15);
-}
-
-/* Glow Effect Bar */
-.glow-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 12px;
-  background: radial-gradient(ellipse at center, rgba(102, 87, 88, 0.4) 0%, transparent 80%);
-  box-shadow: 0 0 20px 5px rgba(27, 14, 51, 0.3);
-  animation: glowPulse 3s ease-in-out infinite;
-  z-index: 998;
-}
-
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3); }
-  50% { box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.6); }
-  100% { box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3); }
-}
-
-/* Dark Mode */
-body.dark {
+body.dark-mode {
   background-color: #121212;
   color: #f0f0f0;
 }
 
-body.dark nav {
+body.dark-mode nav {
   background-color: #1e1e1e;
 }
 
-body.dark .nav-center li a,
-body.dark .hero-text,
-body.dark .content h2 {
+body.dark-mode .nav-center li a,
+body.dark-mode .hero-text,
+body.dark-mode .content h2,
+body.dark-mode .content p {
   color: #f0f0f0;
 }
 
-body.dark .project-card {
+body.dark-mode .project-card {
   background-color: #1e1e1e;
   color: #f0f0f0;
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
 }
 
-body.dark .insert-card {
+body.dark-mode .insert-card {
   background-color: #333;
   color: #ccc;
 }
 
-body.dark .language-tags span {
+body.dark-mode .language-tags span {
   background-color: #222;
   color: #fff;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .hero-text h2 {
-    font-size: 28px;
-  }
 
-  .hero-text p {
-    font-size: 16px;
-  }
 
-  nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
 
-  .nav-center {
-    flex: 2;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    padding-top: 10px;
-  }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 18ch; }
+    }
 
-  #modeToggle {
-    margin-left: auto;
-  }
-}
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+    }
 
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #302f2fe1;
+      color: white;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-size: 20px;
+      flex: 1;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex: 2;
+      list-style: none;
+    }
+
+    .nav-center li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-center li a:hover {
+      color: #ffcc00;
+    }
+
+    #modeToggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      flex: 1;
+      text-align: right;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-text h2 {
+      font-size: 36px;
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    /* Content Sections */
+    .content {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .content h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #302f2f;
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .language-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .language-tags span {
+      background-color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Project Gallery */
+    .gallery-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+      scroll-behavior: smooth;
+    }
+
+    .project-card {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 220px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .insert-card {
+      background-color: #e0e0e0;
+      color: #444;
+      font-size: 16px;
+      font-weight: bold;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    /* Footer Dock */
+    .dock-container {
+      position: fixed;
+      bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .dock {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 10px 25px;
+      display: flex;
+      gap: 25px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .dock a img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.2s ease;
+    }
+
+    .dock a:hover img {
+      transform: scale(1.15);
+    }
+
+    .glow-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      background: radial-gradient(ellipse at center, rgba(102, 87, 88, 0.4) 0%, transparent 80%);
+      box-shadow: 0 0 20px 5px rgba(27, 14, 51, 0.3);
+      animation: glowPulse 3s ease-in-out infinite;
+      z-index: 998;
+    }
+
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3); }
+      50% { box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.6); }
+      100% { box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero-text h2 {
+        font-size: 28px;
+      }
+
+      .hero-text p {
+        font-size: 16px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .nav-center {
+        flex: 2;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding-top: 10px;
+      }
+
+      #modeToggle {
+        margin-left: auto;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Intro Typing Screen -->
+<!-- Intro Typing Screen -->
 <div id="intro-screen">
   <div id="intro-text">Sampson Kofi Adjei</div>
 </div>
 
- <nav>
+<!-- Navigation -->
+<nav>
   <h1>Sampson</h1>
   <ul class="nav-center">
     <li><a href="#home">Home</a></li>
@@ -341,171 +353,156 @@ body.dark .language-tags span {
   <button id="modeToggle" title="Toggle Dark Mode">🌙</button>
 </nav>
 
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <img src="Home.jpg" alt="Banner" />
+  <div class="hero-text">
+    <h2>Hi, I am Sampson Kofi Adjei</h2>
+    <p>WELCOME TO MY PORTFOLIO</p>
+  </div>
+</section>
 
-  <section class="hero" id="home">
-    <img src="Home.jpg" alt="Banner" />
-    <div class="hero-text">
-      <h2>Hi, I am Sampson Kofi Adjei</h2>
-      <p>WELCOME TO MY PORTFOLIO</p>
+<!-- About Me Section -->
+<section class="content" id="about">
+  <h2>About Me</h2>
+  <p>My name is Sampson Kofi Adjei, and my journey in computer science began at the age of nine when my Uncle Kobby, introduced me to the components of a computer system. He guided me as I assembled my first machine and sparked my curiosity by showing me how he coded in Java. I was fascinated by how simple lines of code could create something as exciting as the game Virtua Cop, which quickly became a favorite of mine. That early exposure planted the seed for a lifelong passion. By thirteen, I had developed a strong interest in computer specifications, learning how different components like RAM, SSDs, and graphics cards affect performance. I came to understand that not every system can handle every task, and this technical awareness fueled my early success in Information Technology throughout primary and high school. Now, as a university student, I’ve mastered both frontend and backend development, including managing complex databases. I dedicate myself to building new projects almost every week to sharpen my skills and stay current. Many nights stretch into the early hours as I immerse myself in solving problems and bringing ideas to life through code. But I’m not stopping there. As the world pivots toward automation, I’m expanding my knowledge into Cybersecurity and Artificial Intelligence. I believe AI is the future and without security, it’s vulnerable. That’s why I’m determined to master both, so I can build smart, secure systems that solve real-world problems. For me, computer science is more than a career. It’s a mission. My goal is to innovate, protect, and inspire through technology — one project, one breakthrough, and one sleepless night at a time.</p>
+  
+</section>
+
+<!-- Languages -->
+<section class="content" id="languages">
+  <h2>My Programming Languages</h2>
+  <div class="language-tags">
+    <span>Python</span>
+    <span>JavaScript</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>C#</span>
+    <span>SQL</span>
+    <span>PHP</span>
+    <span>C++</span>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="content" id="projects">
+  <h2>My Project Gallery</h2>
+  <div class="gallery-scroll" id="projectGallery">
+    <div class="project-card" onclick="window.open('https://github.com/Fnomer12/HotelBookingSystem', '_blank')">
+      <img src="Hotel.jpg" alt="Hotel Management System" />
+      <p><em>Hotel Management System</em></p>
     </div>
-  </section>
-
-  <section class="content" id="about">
-    <h2>About  Me</h2>
-    <p>My name is Sampson Kofi Adjei, and my journey in computer science began at the age of nine when my Uncle Kobby, introduced me to the components of a computer system. He guided me as I assembled my first machine and sparked my curiosity by showing me how he coded in Java. I was fascinated by how simple lines of code could create something as exciting as the game Virtua Cop, which quickly became a favorite of mine. That early exposure planted the seed for a lifelong passion.
-
-By thirteen, I had developed a strong interest in computer specifications, learning how different components like RAM, SSDs, and graphics cards affect performance. I came to understand that not every system can handle every task, and this technical awareness fueled my early success in Information Technology throughout primary and high school.
-
-Now, as a university student, I’ve mastered both frontend and backend development, including managing complex databases. I dedicate myself to building new projects almost every week to sharpen my skills and stay current. Many nights stretch into the early hours as I immerse myself in solving problems and bringing ideas to life through code.
-
-But I’m not stopping there. As the world pivots toward automation, I’m expanding my knowledge into Cybersecurity and Artificial Intelligence. I believe AI is the future and without security, it’s vulnerable. That’s why I’m determined to master both, so I can build smart, secure systems that solve real-world problems.
-
-For me, computer science is more than a career. It’s a mission. My goal is to innovate, protect, and inspire through technology — one project, one breakthrough, and one sleepless night at a time.</p>
-   
-  </section>
-
-  <section class="content" id="languages">
-    <h2>My Programming Languages</h2>
-    <p>Here are the programming languages I'm proficient in:</p>
-    <div class="language-tags">
-      <span>Python</span>
-      <span>JavaScript</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>C#</span>
-      <span>SQL</span>
-      <span>PHP</span>
-      <span>C++</span>
+    <div class="project-card" onclick="window.open('https://github.com/Fnomer12/Payroll_system', '_blank')">
+      <img src="Payroll.jpg" alt="Payroll System" />
+      <p><em>Payroll System</em></p>
     </div>
-  </section>
-
-  <section class="content" id="projects">
-    <h2>My Project Gallery</h2>
-    <p>Click a project to view the code on GitHub.</p>
-    <div class="gallery-scroll" id="projectGallery">
-
-      <!-- Project 1 -->
-      <div class="project-card" onclick="window.open('https://github.com/Fnomer12/HotelBookingSystem', '_blank')">
-        <img src="Hotel.jpg" alt="Hotel Management System" />
-        <p style="font-family: 'Times New Roman', italic;"><em>Hotel Management System</em></p>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card" onclick="window.open('https://github.com/Fnomer12/Payroll_system', '_blank')">
-        <img src="Payroll.jpg" alt="Payroll System" />
-        <p style="font-family: 'Times New Roman', italic;"><em>Payroll System</em></p>
-      </div>
-
-       <!-- Project 3 -->
-      <div class="project-card" onclick="window.open('https://github.com/Fnomer12/National_flag', '_blank')">
-        <img src="National Flag.jpg" alt="National Flag" />
-        <p style="font-family: 'Times New Roman', italic;"><em>National Flag</em></p>
-      </div>
-
-       <!-- Project 4 -->
-      <div class="project-card" onclick="window.open('https://github.com/Fnomer12/School_Management_System', '_blank')">
-        <img src="School .jpg" alt="School Management System" />
-        <p style="font-family: 'Times New Roman', italic;"><em>School Management System</em></p>
-      </div>
-
-        <!-- Project 5 -->
-      <div class="project-card" onclick="window.open('https://github.com/Fnomer12/Salon_app', '_blank')">
-        <img src="Salon.jpg" alt="Salon App" />
-        <p style="font-family: 'Times New Roman', italic;"><em>Salon App</em></p>
-      </div>
-
-      <div class="project-card insert-card" onclick="openUploader()">
-        <span>+ Add Project</span>
-      </div>
+    <div class="project-card" onclick="window.open('https://github.com/Fnomer12/National_flag', '_blank')">
+      <img src="National Flag.jpg" alt="National Flag" />
+      <p><em>National Flag</em></p>
     </div>
-  </section>
-
-  <section class="content" id="contact">
-    <h2>Contact</h2>
-    <p>Phone: +233 544 239 772<br/>
-    Email: skeng246@gmail.com</p>
-  </section>
-
-  <!-- iPhone-style Dock -->
-  <div class="dock-container">
-    <div class="dock">
-      <a href="https://www.instagram.com/man.like.kofi_" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-      </a>
-      <a href="https://t.snapchat.com/BXBrFytG" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Snapchat_logo.svg/1024px-Snapchat_logo.svg.png" alt="Snapchat" />
-      </a>
-      <a href="https://www.linkedin.com/in/sampson-adjei-b594002b5" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
-      </a>
-      <a href="https://github.com/Fnomer12" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" />
-      </a>
+    <div class="project-card" onclick="window.open('https://github.com/Fnomer12/School_Management_System', '_blank')">
+      <img src="School .jpg" alt="School Management System" />
+      <p><em>School Management System</em></p>
+    </div>
+    <div class="project-card" onclick="window.open('https://github.com/Fnomer12/Salon_app', '_blank')">
+      <img src="Salon.jpg" alt="Salon App" />
+      <p><em>Salon App</em></p>
+    </div>
+    <div class="project-card insert-card" onclick="openUploader()">
+      <span>+ Add Project</span>
     </div>
   </div>
+</section>
 
-  <div class="glow-bar"></div>
+<!-- Contact -->
+<section class="content" id="contact">
+  <h2>Contact</h2>
+  <p>Phone: +233 544 239 772<br/>Email: skeng246@gmail.com</p>
+</section>
 
-  <input type="file" id="imageUploader" style="display:none" accept="image/*" />
+<!-- Dock -->
+<div class="dock-container">
+  <div class="dock">
+    <a href="https://www.instagram.com/man.like.kofi_" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+    </a>
+    <a href="https://t.snapchat.com/BXBrFytG" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Snapchat_logo.svg/1024px-Snapchat_logo.svg.png" alt="Snapchat" />
+    </a>
+    <a href="https://www.linkedin.com/in/sampson-adjei-b594002b5" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+    </a>
+    <a href="https://github.com/Fnomer12" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" />
+    </a>
+  </div>
+</div>
 
-  <script>
-    // Hide intro after typing animation completes
+<div class="glow-bar"></div>
+
+<!-- Image Uploader -->
+<input type="file" id="imageUploader" style="display:none" accept="image/*" />
+
+<!-- JS Scripts -->
+<script>
+  // Hide intro after typing animation completes
   setTimeout(() => {
     document.getElementById('intro-screen').style.display = 'none';
   }, 4000);
-    
-    function openUploader() {
-      const input = document.getElementById('imageUploader');
-      input.click();
 
-      input.onchange = () => {
-        const file = input.files[0];
-        const reader = new FileReader();
+  // Add new project uploader
+  function openUploader() {
+    const input = document.getElementById('imageUploader');
+    input.click();
 
-        reader.onload = () => {
-          const imageData = reader.result;
-          const link = prompt("Enter the GitHub URL for this project:");
-          const title = prompt("Enter the project title:");
+    input.onchange = () => {
+      const file = input.files[0];
+      const reader = new FileReader();
 
-          if (!link || !title) return;
+      reader.onload = () => {
+        const imageData = reader.result;
+        const link = prompt("Enter the GitHub URL for this project:");
+        const title = prompt("Enter the project title:");
 
-          const gallery = document.getElementById('projectGallery');
+        if (!link || !title) return;
 
-          const card = document.createElement('div');
-          card.className = 'project-card';
-          card.onclick = () => window.open(link, '_blank');
+        const gallery = document.getElementById('projectGallery');
 
-          const img = document.createElement('img');
-          img.src = imageData;
-          img.alt = title;
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.onclick = () => window.open(link, '_blank');
 
-          const p = document.createElement('p');
-          p.textContent = title;
+        const img = document.createElement('img');
+        img.src = imageData;
+        img.alt = title;
 
-          card.appendChild(img);
-          card.appendChild(p);
-          gallery.insertBefore(card, gallery.lastElementChild);
+        const p = document.createElement('p');
+        p.innerHTML = `<em>${title}</em>`;
 
-          input.value = "";
-        };
+        card.appendChild(img);
+        card.appendChild(p);
+        gallery.insertBefore(card, gallery.lastElementChild);
 
-        if (file) reader.readAsDataURL(file);
+        input.value = "";
       };
-    }
-  </script>
 
-  <!-- Brightness Toggle -->
-  <script>
+      if (file) reader.readAsDataURL(file);
+    };
+  }
+
+  // Theme toggle
   const toggleBtn = document.getElementById('modeToggle');
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  if (prefersDark) document.body.classList.add('dark');
+  // Optional: Set initial mode based on preference
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark-mode');
+    toggleBtn.textContent = '☀️';
+  }
 
   toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    document.body.classList.toggle('dark-mode');
+    toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
   });
 </script>
-
 </body>
 </html>
