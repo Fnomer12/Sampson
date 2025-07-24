@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sampson's Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,300&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
   <style>
     * {
@@ -183,6 +183,28 @@ body.dark-mode .language-tags span {
       padding: 80px 20px;
       max-width: 900px;
       margin: auto;
+    }
+
+    /*Programming language hover*/
+    .language-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .language-tags i {
+      font-size: 70px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .language-tags i:hover { transform: scale(1.2); }
+    .gallery-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+      scroll-behavior: smooth;
     }
 
     .content h2 {
@@ -365,7 +387,7 @@ body.dark-mode .language-tags span {
 <!-- About Me Section -->
 <section class="content" id="about">
   <h2>About Me</h2>
-  <p>My name is Sampson Kofi Adjei, and my journey in computer science began at the age of nine when my Uncle Kobby, introduced me to the components of a computer system. He guided me as I assembled my first machine and sparked my curiosity by showing me how he coded in Java. I was fascinated by how simple lines of code could create something as exciting as the game Virtua Cop, which quickly became a favorite of mine. That early exposure planted the seed for a lifelong passion. By thirteen, I had developed a strong interest in computer specifications, learning how different components like RAM, SSDs, and graphics cards affect performance. I came to understand that not every system can handle every task, and this technical awareness fueled my early success in Information Technology throughout primary and high school. Now, as a university student, I’ve mastered both frontend and backend development, including managing complex databases. I dedicate myself to building new projects almost every week to sharpen my skills and stay current. Many nights stretch into the early hours as I immerse myself in solving problems and bringing ideas to life through code. But I’m not stopping there. As the world pivots toward automation, I’m expanding my knowledge into Cybersecurity and Artificial Intelligence. I believe AI is the future and without security, it’s vulnerable. That’s why I’m determined to master both, so I can build smart, secure systems that solve real-world problems. For me, computer science is more than a career. It’s a mission. My goal is to innovate, protect, and inspire through technology — one project, one breakthrough, and one sleepless night at a time.</p>
+  <p style="font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;">My name is Sampson Kofi Adjei, and my journey in computer science began at the age of nine when my Uncle Kobby, introduced me to the components of a computer system. He guided me as I assembled my first machine and sparked my curiosity by showing me how he coded in Java. I was fascinated by how simple lines of code could create something as exciting as the game Virtua Cop, which quickly became a favorite of mine. That early exposure planted the seed for a lifelong passion. By thirteen, I had developed a strong interest in computer specifications, learning how different components like RAM, SSDs, and graphics cards affect performance. I came to understand that not every system can handle every task, and this technical awareness fueled my early success in Information Technology throughout primary and high school. Now, as a university student, I’ve mastered both frontend and backend development, including managing complex databases. I dedicate myself to building new projects almost every week to sharpen my skills and stay current. Many nights stretch into the early hours as I immerse myself in solving problems and bringing ideas to life through code. But I’m not stopping there. As the world pivots toward automation, I’m expanding my knowledge into Cybersecurity and Artificial Intelligence. I believe AI is the future and without security, it’s vulnerable. That’s why I’m determined to master both, so I can build smart, secure systems that solve real-world problems. For me, computer science is more than a career. It’s a mission. My goal is to innovate, protect, and inspire through technology — one project, one breakthrough, and one sleepless night at a time.</p>
   
 </section>
 
@@ -373,14 +395,14 @@ body.dark-mode .language-tags span {
 <section class="content" id="languages">
   <h2>My Programming Languages</h2>
   <div class="language-tags">
-    <span>Python</span>
-    <span>JavaScript</span>
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>C#</span>
-    <span>SQL</span>
-    <span>PHP</span>
-    <span>C++</span>
+    <i class="devicon-python-plain-wordmark colored" title="Python"></i>
+      <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+      <i class="devicon-html5-plain-wordmark colored" title="HTML"></i>
+      <i class="devicon-css3-plain-wordmark colored" title="CSS"></i>
+      <i class="devicon-csharp-plain colored" title="C#"></i>
+      <i class="devicon-mysql-plain-wordmark colored" title="SQL"></i>
+      <i class="devicon-php-plain colored" title="PHP"></i>
+      <i class="devicon-cplusplus-plain colored" title="C++"></i>
   </div>
 </section>
 
@@ -445,6 +467,33 @@ body.dark-mode .language-tags span {
 
 <!-- JS Scripts -->
 <script>
+
+  // Sound API for hover effects
+   const hoverSound = document.getElementById("hover-sound");
+
+  // For Programming Language Tags
+  document.querySelectorAll('.language-tags span').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      hoverSound.currentTime = 0;
+      hoverSound.play();
+    });
+  });
+
+  // For Project Cards
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      hoverSound.currentTime = 0;
+      hoverSound.play();
+    });
+  });
+
+// Optional: Play on scroll of project gallery
+const projectGallery = document.getElementById('projectGallery');
+projectGallery.addEventListener('scroll', () => {
+  hoverSound.currentTime = 0;
+  hoverSound.play();
+});
+
   // Hide intro after typing animation completes
   setTimeout(() => {
     document.getElementById('intro-screen').style.display = 'none';
@@ -504,5 +553,8 @@ body.dark-mode .language-tags span {
     toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
   });
 </script>
+<audio id="hover-sound" src="hover-sound.mp3" preload="auto"></audio>
+
+
 </body>
 </html>
