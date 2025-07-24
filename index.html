@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sampson's Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
   <style>
     * {
@@ -329,78 +329,31 @@ body.dark-mode .language-tags span {
     }
 
     /* Responsive */
-   /* Responsive Design Enhancements */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    padding: 10px 20px;
-    align-items: flex-start;
-  }
+    @media (max-width: 600px) {
+      .hero-text h2 {
+        font-size: 28px;
+      }
 
-  .nav-center {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 10px;
-  }
+      .hero-text p {
+        font-size: 16px;
+      }
 
-  .hero {
-    height: 80vh;
-  }
+      nav {
+        flex-wrap: wrap;
+      }
 
-  .hero-text h2 {
-    font-size: 20px;
-    padding: 0 10px;
-  }
+      .nav-center {
+        flex: 2;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding-top: 10px;
+      }
 
-  .hero-text p {
-    font-size: 14px;
-    padding: 0 10px;
-  }
-
-  .content {
-    padding: 40px 15px;
-  }
-
-  .project-card {
-    width: 160px;
-    height: auto;
-  }
-
-  .project-card img {
-    height: 100px;
-  }
-
-  .language-tags {
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .language-tags i {
-    font-size: 50px;
-  }
-
-  .dock {
-    flex-wrap: wrap;
-    padding: 8px 15px;
-    gap: 15px;
-  }
-
-  .dock a img {
-    width: 35px;
-    height: 35px;
-  }
-
-  .content h2 {
-    font-size: 22px;
-  }
-
-  .content p {
-    font-size: 16px;
-  }
-}
-
-    
+      #modeToggle {
+        margin-left: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -442,7 +395,7 @@ body.dark-mode .language-tags span {
 <section class="content" id="languages">
   <h2>My Programming Languages</h2>
   <div class="language-tags">
-       <i class="devicon-python-plain colored" title="Python"></i>
+    <i class="devicon-python-plain-wordmark colored" title="Python"></i>
       <i class="devicon-javascript-plain colored" title="JavaScript"></i>
       <i class="devicon-html5-plain-wordmark colored" title="HTML"></i>
       <i class="devicon-css3-plain-wordmark colored" title="CSS"></i>
